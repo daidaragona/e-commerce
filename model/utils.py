@@ -122,7 +122,5 @@ def combine_labels_with_probabilities(labels, probabilities):
     Returns:
         list: The combined labels and probabilities.
     """
-    combined = [
-        f"{label} {prob*100:.2f}%" for label, prob in zip(labels, probabilities)
-    ]
+    combined = [f"{label} {prob*100}%" for label, prob in zip(labels, probabilities)]
     return combined

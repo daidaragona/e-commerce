@@ -32,8 +32,6 @@ model = BertModel(
     len(categories["level_6"]),
     len(categories["level_7"]),
 )
-# Load pre-trained model weights
-model.load_state_dict(torch.load(settings.MODEL_PATH))
 
 
 def predict(input):
@@ -88,5 +86,7 @@ if __name__ == "__main__":
     print("Launching ML service...")
     # Download weights for hierarchical loss function
     get_weights()
+    # Load pre-trained model weights
+    model.load_state_dict(torch.load(settings.MODEL_PATH))
     # Start the classification process
     classify_process()
